@@ -1,0 +1,143 @@
+/* ===== FUNDO DA PÁGINA ===== */
+body {
+    background-image: url('/imgs/fundo.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: #0a0a23;
+
+    font-family: Arial, sans-serif;
+    line-height: 30px;
+    overflow-x: hidden;
+    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    margin: 0;
+    color: #ffffff !important;
+}
+
+
+/* ===== MENU E RODAPÉ ===== */
+nav, footer {
+    background-color: rgba(0, 51, 102, 0.9) !important;
+    color: #ffffff !important;
+}
+
+nav a, footer p {
+    color: #ffffff !important;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+/* ===== CAIXAS DE CONTEÚDO (TODAS IGUAIS) ===== */
+.caixa-cadastro, .caixa-lista,
+div[style*="background-color"],
+div[bgcolor],
+.card,
+div[style*="#e6f0fa"],
+div[style*="#e6f2ff"],
+.principal, .menu-navegacao {
+    width: 90% !important;
+    max-width: 1000px !important;
+    margin: 20px auto !important;
+    padding: 25px !important;
+    box-sizing: border-box !important;
+    
+    background-color: rgba(5, 15, 45, 0.92) !important;
+    border: 1px solid rgba(80, 160, 255, 0.4) !important;
+    border-radius: 8px !important;
+    color: #ffffff !important;
+
+    /* ⚠️ ESSENCIAL: NÃO atrapalha os formulários */
+    position: relative !important;
+    pointer-events: auto !important;
+}
+
+/* Garante que TODO elemento dentro da caixa funcione e seja branco */
+.caixa-cadastro *, .caixa-lista *,
+div[style*="background-color"] *,
+.card *, .principal * {
+    color: #ffffff !important;
+    pointer-events: auto !important;
+}
+
+
+/* ===== TÍTULOS ===== */
+h1, h2, h3 {
+    color: #e6f2ff !important;
+    font-weight: bold !important;
+    text-shadow: 0 0 8px rgba(100, 180, 255, 0.4);
+    margin-top: 0 !important;
+}
+
+
+/* ===== CAMPOS DE FORMULÁRIO - CORRIGIDO PARA FUNCIONAR ===== */
+input {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 10px !important;
+    margin: 8px 0 !important;
+    background-color: rgba(255, 255, 255, 0.97) !important;
+    color: #000033 !important;
+    border: 1px solid #6699dd !important;
+    border-radius: 4px !important;
+    font-size: 15px !important;
+
+    /* ⚠️ ESSENCIAL: Permite digitar e enviar */
+    position: static !important;
+    z-index: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Deixa o placeholder com cor bonita */
+input::placeholder {
+    color: #5577aa !important;
+}
+
+
+/* ===== TABELAS ===== */
+table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-top: 15px !important;
+}
+
+th {
+    background-color: rgba(0, 80, 160, 0.8) !important;
+    color: #ffffff !important;
+    padding: 12px !important;
+    text-align: left !important;
+    font-weight: bold !important;
+}
+
+td {
+    padding: 12px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+}
+
+
+/* ===== BOTÕES ===== */
+button, .btn {
+    padding: 8px 18px !important;
+    border: none !important;
+    border-radius: 4px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    font-size: 14px !important;
+}
+
+.btn-cadastrar, button[type="submit"] { 
+    background-color: #28a745 !important; 
+    color: #fff !important; 
+}
+.btn-limpar, button[type="reset"] { 
+    background-color: #dc3545 !important; 
+    color: #fff !important; 
+}
+.btn-editar { background-color: #ffcc00 !important; color: #000 !important; }
+.btn-excluir { background-color: #e62e2e !important; color: #fff !important; }

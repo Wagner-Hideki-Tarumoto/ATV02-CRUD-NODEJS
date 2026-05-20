@@ -1,0 +1,39 @@
+<%- include('partials/header.ejs')%>
+<%- include('partials/navbar.ejs')%>
+
+<!--Pagina de Edição-->
+<div class="conteiner">
+<div class="card">
+    <div class="card-header">
+        <h1>Alterar cliente</h1>
+        <hr>
+    </div>
+<div class.card-body>
+<form action="/clientes/alterar" method="POST">
+    <label>Nome do cliente:</label>
+    <input type="text" name="nome" class="form-control" value="<%= cliente.nome %>" required>
+    <label>CPF do cliente:</label>
+    <input type="text" name="cpf" class="form-control" value="<%= cliente.cpf %>" required>
+    label>Endereco do cliente:</label>
+    <input type="text" name="endereco" class="form-control" value="<%= cliente.endereco %>" required>
+    <br>
+
+    //input escondida para armazenar id do cliente
+<input type="hidden" name="id" value="<%= cliente.id %">
+
+     <!--botao de enviar-->
+     <input type="submit" value="Alterar" class="btn btn-warning">
+      <!--botao de limpar--> 
+     <input type="reset" value="Limpar" class="btn btn-danger">
+    </cliente>
+   
+</form>
+
+</div>
+
+
+<div class="card">
+    <div class="card-header">
+
+</div>
+<%- include('partials/footer.ejs')%>

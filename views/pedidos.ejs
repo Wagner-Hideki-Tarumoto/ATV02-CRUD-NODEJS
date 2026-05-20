@@ -1,0 +1,76 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+
+<!-- forumulario de cadastro de pedido-->
+ <div class="container">
+    <div class="card">
+        <div class="card-header">
+        <h1>Cadastrar pedido</h1>
+        </div>
+        <div class="card-body">
+            <form action="/pedidos/cadastrar" method="POST">
+                <label>Numero do Pedido</label>
+               <input type="text" name="numero" placerolder="Insira o numero do pedido" required class="form-control">
+                <label>Valor do Pedido</label>
+               <input type="text" name="valor" placerolder="Insira o valor do pedido" required class="form-control">
+
+                <label>Cliente</label>
+                <!-- SELECT PARA SELEÇÃO DO CLIENTE-->
+                 <select name="clienteId" class="form-control" required>
+                    <option value="" selected disable>Selecione um cliente</option>
+                    <%clientes.forEach(cliente =>{ %>
+                    <option value="<%= cliente.id %>">
+                        <%= cliente.nome %>
+                    </option>
+                    <%}) %>
+                 </select>
+                 <br>
+                 <button type="submit" class="btn btn-success">Cadastrar</button>
+
+
+          </div>  
+       
+    </div>
+    </div>
+ </divi>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1>Pedidos</h1>
+            </div>
+            <div class="card-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Número:</th>
+                            <th>Valor:</th>
+                            <th>Nome do Cliente</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% pedidos.forEach(pedido => { %>
+                        <tr>
+                            <td><img src="imgs/order.png" width="30px"></td>
+                            <td><%= pedido.numero %></td>
+                            <td><%= pedido.valor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %></td>
+                            <td><%= pedido.cliente.nome %></td>
+
+                            <!--Botão de excluir--> 
+                            <td>
+                                <a onclick="return confirm('Deseja mesmo excluir o pedido?')"
+                                href="/pedidos/excluir/<%= pedido.id %>" class=" btn btn-danger">
+                                    Excluir
+                                </a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<%- include ('partials/footer.ejs') %>
