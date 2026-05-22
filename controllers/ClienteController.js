@@ -50,7 +50,7 @@ endereco: endereco
 });
 })
 //ROTA DE EXCLUSAO DE CLIENTE
-router.get("/clientes/excluir/:id", (req, res) =>{
+router.get("/clientes/delete/:id", (req, res) =>{
   //capturando o parâmentro da rota
   const id = req.params.id
   //enviando ID do cliente para apagar do banco de dados

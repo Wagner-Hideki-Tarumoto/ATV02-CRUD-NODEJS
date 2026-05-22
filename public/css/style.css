@@ -19,10 +19,11 @@ body {
 }
 
 
-/* ===== MENU E RODAPÉ ===== */
+/* MENU E RODAPÉ */
 nav, footer {
     background-color: rgba(0, 51, 102, 0.9) !important;
     color: #ffffff !important;
+
 }
 
 nav a, footer p {
@@ -32,7 +33,7 @@ nav a, footer p {
 }
 
 
-/* ===== CAIXAS DE CONTEÚDO (TODAS IGUAIS) ===== */
+/* CAIXAS DE CONTEÚDO */
 .caixa-cadastro, .caixa-lista,
 div[style*="background-color"],
 div[bgcolor],
@@ -51,12 +52,12 @@ div[style*="#e6f2ff"],
     border-radius: 8px !important;
     color: #ffffff !important;
 
-    /* ⚠️ ESSENCIAL: NÃO atrapalha os formulários */
+    /* ⚠️ ESSENCIAL formulários */
     position: relative !important;
     pointer-events: auto !important;
 }
 
-/* Garante que TODO elemento dentro da caixa funcione e seja branco */
+/* elemento caixa branco */
 .caixa-cadastro *, .caixa-lista *,
 div[style*="background-color"] *,
 .card *, .principal * {
@@ -65,7 +66,7 @@ div[style*="background-color"] *,
 }
 
 
-/* ===== TÍTULOS ===== */
+/* TÍTULOS */
 h1, h2, h3 {
     color: #e6f2ff !important;
     font-weight: bold !important;
@@ -74,7 +75,7 @@ h1, h2, h3 {
 }
 
 
-/* ===== CAMPOS DE FORMULÁRIO - CORRIGIDO PARA FUNCIONAR ===== */
+/* CAMPOS DE FORMULÁRIO */
 input {
     width: 100% !important;
     box-sizing: border-box !important;
@@ -99,7 +100,7 @@ input::placeholder {
 }
 
 
-/* ===== TABELAS ===== */
+/* TABELAS  */
 table {
     width: 100% !important;
     border-collapse: collapse !important;
@@ -121,7 +122,7 @@ td {
 }
 
 
-/* ===== BOTÕES ===== */
+/* BOTÕES  */
 button, .btn {
     padding: 8px 18px !important;
     border: none !important;
@@ -141,3 +142,11 @@ button, .btn {
 }
 .btn-editar { background-color: #ffcc00 !important; color: #000 !important; }
 .btn-excluir { background-color: #e62e2e !important; color: #fff !important; }
+
+/* Seleciona todos os links que estão dentro do bloco card-body */
+.card-body a {
+    font-size: 2.0rem; /* Aumenta o tamanho da letra */
+    text-decoration: none; /* Remove o sublinhado se desejar */
+    display: inline-block; /* Melhora a área de clique do link */
+    padding: 5px 0; /* Dá um espaçamento vertical entre eles */
+}

@@ -59,8 +59,8 @@ app.set('view engine', 'ejs')
 // Define o uso da pasta "public" para uso de arquivos estáticos
 app.use(express.static('public'));
 //Configurando o Express para aceitar daddos vindos de formularios
-app.use(express.urlencoded({extended: false}))
-
+app.use(express.urlencoded({extended: true}))
+app.use(express.json())
 //Ativando o uso das ROTAS
 app.use("/", ClienteController);
 app.use("/", ProdutoController);

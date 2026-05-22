@@ -10,7 +10,7 @@
     <div class="card-body">
         <form action="/clientes/cadastrar" method="post">
             <label>Nome do cliente</label>
-            <input type="text" name="nome" placeholder="Insira o nome do cliente "class="form-control" required>
+            <input type="text" name="nome" placeholder="Insira o nome do cliente" class="form-control" required>
 
             <label>cpf do cliente</label>
             <input type="text" name="cpf" placeholder="Insira o CPF do cliente "class="form-control" required>
@@ -42,8 +42,9 @@
                         <tbody>
                             <% clientes.forEach(cliente=> { %>
                                 <tr>
-                                    <td><img src="imgs/avatar.png" width="30px"></td>
+
                                     <td>
+                                        <img src="/imgs/<%= cliente.nome.toLowerCase() %>.png" width="40" height="40" style="border-radius:50%;" onerror="this.src='/imgs/avatar.png'">
                                         <%= cliente.nome %>
                                     </td>
                                     <td>
@@ -53,21 +54,20 @@
                                         <%= cliente.endereco %>
                                     </td>
                                     <!--Editar-->
+                                                                        <td>
+                                        <a href="/clientes/editar/<%= cliente.id %>" class="btn btn-warning" style="color: black !important;">
+                                            Editar
+                                        </a>
+                                    </td>
+
                                     <td>
-                                        <a href="/clientes/editar/<%=cliente.id%>">
-                                        <button class="btn btn-warning">
-                                         Editar
-                                    </button>
-                                    </a>
-                                     </td>
-                                    <!--Excluir-->
-                                     <td>
-                                    <a href="/clientes/excluir/<%= cliente.id %>">
-                                    <button onclick="return confirm('Deseja mesmo excluir o cliente?')" class="btn btn-danger">
-                                        Excluir
-                                    </button>
-                                    </a>
-                                </td>
+                                        <a href="/clientes/delete/<%= cliente.id %>" 
+                                        onclick="return confirm('Deseja mesmo excluir o cliente?')" 
+                                        class="btn btn-danger" 
+                                        style="color: white !important;">
+                                            Excluir
+                                        </a>
+                                    </td>
                                 </tr>
                                 <% }) %>
                         </tbody>
