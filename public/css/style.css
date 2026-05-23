@@ -18,20 +18,116 @@ body {
     color: #ffffff !important;
 }
 
+/* ==========================================
+   NOVA CLASSE PARA FORÇAR O MENU SUPERIOR
+   ========================================== */
+/* ==========================================
+   MENU SUPERIOR (Cor idêntica à do rodapé)
+   ========================================== */
 
-/* MENU E RODAPÉ */
-nav, footer {
-    background-color: rgba(0, 51, 102, 0.9) !important;
-    color: #ffffff !important;
-
+.faixa-menu-larga {
+    /* Cor sólida idêntica ao fundo do rodapé (sem transparência para não mudar com o fundo) */
+    background-color: #003366 !important; 
+    
+    /* Mantém o menu largo e imponente */
+    padding-top: 30px !important; 
+    padding-bottom: 30px !important; 
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    
+    width: 100% !important;
+    display: flex !important;
 }
 
-nav a, footer p {
+/* ==========================================
+   MENU E RODAPÉ (Atualizado)
+   ========================================== */
+
+/* Mantém o fundo escuro no footer, aumenta sua espessura, centraliza e joga para o fim da página */
+footer {
+    background-color: rgba(0, 51, 102, 0.9) !important;
+    color: #ffffff !important;
+    padding: 25px 0 !important;
+    text-align: center !important; 
+    
+    /* 🌟 ISSO JOGA O FOOTER PARA O FINAL DA TELA */
+    margin-top: auto !important; 
+}
+
+/* Deixa o nav transparente e aumenta a espessura da faixa do menu */
+nav {
+    background-color: transparent !important;
+    padding: 20px 0 !important;
+}
+
+/* Aplica o texto branco para links do nav e para QUALQUER elemento do footer */
+nav a, footer, footer * {
     color: #ffffff !important;
     font-weight: bold;
     text-decoration: none;
 }
 
+/* --- TAMANHO DAS LETRAS --- */
+
+/* Tamanho dos links do menu */
+nav a {
+    font-size: 18px !important; 
+}
+
+/* Classe exclusiva do rodapé criada para o <span> */
+.texto-rodape {
+    font-size: 24px !important; 
+    color: #ffffff !important;
+    display: inline-block !important;
+}
+
+/* Deixa a logo "Elektro Express" bem destacada no menu */
+nav a:first-child, .navbar-brand {
+    font-size: 28px !important;
+}
+
+
+/* ==========================================
+   MENU E RODAPÉ (Com faixas mais grossas e centralizado)
+   ========================================== */
+
+/* Mantém o fundo escuro no footer, aumenta sua espessura e centraliza o texto */
+footer {
+    background-color: rgba(0, 51, 102, 0.9) !important;
+    color: #ffffff !important;
+    padding: 25px 0 !important;
+    text-align: center !important; 
+}
+
+/* Deixa o nav transparente e aumenta a espessura da faixa do menu */
+nav {
+    background-color: transparent !important;
+    padding: 20px 0 !important;
+}
+
+/* Aplica o texto branco para links do nav e para QUALQUER elemento do footer */
+nav a, footer, footer * {
+    color: #ffffff !important;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* --- TAMANHO DAS LETRAS --- */
+
+/* Tamanho dos links do menu */
+nav a {
+    font-size: 18px !important; 
+}
+
+/* Força o tamanho da letra para QUALQUER texto dentro do rodapé */
+footer, footer p, footer span, footer div, footer a {
+    font-size: 26px !important; /* Mudei para 20px para você notar bem a diferença */
+}
+
+/* Deixa a logo "Elektro Express" bem destacada no menu */
+nav a:first-child, .navbar-brand {
+    font-size: 28px !important;
+}
 
 /* CAIXAS DE CONTEÚDO */
 .caixa-cadastro, .caixa-lista,
@@ -149,4 +245,135 @@ button, .btn {
     text-decoration: none; /* Remove o sublinhado se desejar */
     display: inline-block; /* Melhora a área de clique do link */
     padding: 5px 0; /* Dá um espaçamento vertical entre eles */
+}
+
+/* ===== FUNDO DA PÁGINA ===== */
+body {
+    background-image: url('/imgs/fundo.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: #0a0a23;
+
+    font-family: Arial, sans-serif;
+    line-height: 30px;
+    overflow-x: hidden;
+    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    margin: 0;
+    padding: 0;
+    color: #ffffff !important;
+}
+
+/* ==========================================
+   MENU E RODAPÉ
+   ========================================== */
+
+/* Deixa o nav transparente e com espaçamento elegante */
+/* ==========================================
+   MENU SUPERIOR (Faixa mais larga e visível)
+   ========================================== */
+
+nav {
+    /* 1. Define uma cor escura semi-transparente para a faixa aparecer */
+    background-color: rgba(5, 15, 45, 0.75) !important; 
+    
+    /* 2. Deixa a faixa bem mais alta/larga (Cima e Baixo: 35px | Laterais: 0) */
+    padding: 35px 0 !important; 
+    
+    /* 3. Garante que ela ocupe toda a largura da tela */
+    width: 100% !important;
+    
+    /* Opcional: Adiciona uma linha sutil azul brilhante embaixo da faixa */
+    border-bottom: 1px solid rgba(80, 160, 255, 0.3) !important;
+}
+
+footer {
+    background-color: rgba(0, 51, 102, 0.9) !important;
+    color: #ffffff !important;
+    padding: 25px 0 !important;
+    text-align: center !important; 
+    margin-top: auto !important; 
+    margin-bottom: 0 !important;
+    width: 100% !important;
+}
+
+/* Remove margens extras da linha divisória */
+hr {
+    margin-bottom: 0 !important;
+}
+
+nav a, footer, footer * {
+    color: #ffffff !important;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* --- TAMANHO DAS LETRAS --- */
+nav a {
+    font-size: 18px !important; 
+}
+
+.texto-rodape {
+    font-size: 24px !important; 
+    color: #ffffff !important;
+    display: inline-block !important;
+}
+
+nav a:first-child, .navbar-brand {
+    font-size: 28px !important;
+}
+
+/* ==========================================
+   ALINHAMENTO DO CONTEÚDO CENTRAL
+   ========================================== */
+
+/* Centraliza os textos de Boas-Vindas */
+body > h1, body > h2, body > p, body > h3, .container-fluid h1, .container-fluid p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* CAIXAS DE CONTEÚDO (Centraliza o card perfeitamente) */
+.caixa-cadastro, .caixa-lista,
+div[style*="background-color"],
+div[bgcolor],
+.card,
+div[style*="#e6f0fa"],
+div[style*="#e6f2ff"],
+.principal, .menu-navegacao {
+    width: 90% !important;
+    max-width: 800px !important; 
+    
+    /* 🌟 O segredo: 'auto' nas laterais centraliza o bloco sem quebrar o resto da página */
+    margin: 30px auto !important; 
+    padding: 35px !important; 
+    box-sizing: border-box !important;
+    
+    background-color: rgba(5, 15, 45, 0.92) !important;
+    border: 1px solid rgba(80, 160, 255, 0.4) !important;
+    border-radius: 8px !important;
+    color: #ffffff !important;
+
+    position: relative !important;
+    pointer-events: auto !important;
+}
+
+/* --- TURBO NO TAMANHO DAS LETRAS DO CARD CENTRAL --- */
+.card h2, .principal h2, .menu-navegacao h2 {
+    font-size: 32px !important; 
+    margin-bottom: 20px !important;
+}
+
+.card ul li a, .menu-navegacao ul li a, .principal ul li a {
+    font-size: 22px !important; 
+    line-height: 40px !important; 
+}
+
+.card ul li, .menu-navegacao ul li {
+    font-size: 22px !important;
 }
