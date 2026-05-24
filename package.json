@@ -16,5 +16,14 @@
     "nodemon": "^3.0.1",
     "sequelize": "^6.37.8"
   },
-  "type": "module"
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wagner-Hideki-Tarumoto/ATV02-CRUD-NODEJS.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Wagner-Hideki-Tarumoto/ATV02-CRUD-NODEJS/issues"
+  },
+  "homepage": "https://github.com/Wagner-Hideki-Tarumoto/ATV02-CRUD-NODEJS#readme"
 }
