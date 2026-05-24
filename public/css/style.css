@@ -1,253 +1,6 @@
-/* ===== FUNDO DA PÁGINA ===== */
-body {
-    background-image: url('/imgs/fundo.png'); 
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-color: #0a0a23;
-
-    font-family: Arial, sans-serif;
-    line-height: 30px;
-    overflow-x: hidden;
-    
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; 
-    margin: 0;
-    color: #ffffff !important;
-}
-
 /* ==========================================
-   NOVA CLASSE PARA FORÇAR O MENU SUPERIOR
+   ===== FUNDO DA PÁGINA E ESTRUTURA =====
    ========================================== */
-/* ==========================================
-   MENU SUPERIOR (Cor idêntica à do rodapé)
-   ========================================== */
-
-.faixa-menu-larga {
-    /* Cor sólida idêntica ao fundo do rodapé (sem transparência para não mudar com o fundo) */
-    background-color: #003366 !important; 
-    
-    /* Mantém o menu largo e imponente */
-    padding-top: 30px !important; 
-    padding-bottom: 30px !important; 
-    padding-left: 40px !important;
-    padding-right: 40px !important;
-    
-    width: 100% !important;
-    display: flex !important;
-}
-
-/* ==========================================
-   MENU E RODAPÉ (Atualizado)
-   ========================================== */
-
-/* Mantém o fundo escuro no footer, aumenta sua espessura, centraliza e joga para o fim da página */
-footer {
-    background-color: rgba(0, 51, 102, 0.9) !important;
-    color: #ffffff !important;
-    padding: 25px 0 !important;
-    text-align: center !important; 
-    
-    /* 🌟 ISSO JOGA O FOOTER PARA O FINAL DA TELA */
-    margin-top: auto !important; 
-}
-
-/* Deixa o nav transparente e aumenta a espessura da faixa do menu */
-nav {
-    background-color: transparent !important;
-    padding: 20px 0 !important;
-}
-
-/* Aplica o texto branco para links do nav e para QUALQUER elemento do footer */
-nav a, footer, footer * {
-    color: #ffffff !important;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-/* --- TAMANHO DAS LETRAS --- */
-
-/* Tamanho dos links do menu */
-nav a {
-    font-size: 18px !important; 
-}
-
-/* Classe exclusiva do rodapé criada para o <span> */
-.texto-rodape {
-    font-size: 24px !important; 
-    color: #ffffff !important;
-    display: inline-block !important;
-}
-
-/* Deixa a logo "Elektro Express" bem destacada no menu */
-nav a:first-child, .navbar-brand {
-    font-size: 28px !important;
-}
-
-
-/* ==========================================
-   MENU E RODAPÉ (Com faixas mais grossas e centralizado)
-   ========================================== */
-
-/* Mantém o fundo escuro no footer, aumenta sua espessura e centraliza o texto */
-footer {
-    background-color: rgba(0, 51, 102, 0.9) !important;
-    color: #ffffff !important;
-    padding: 25px 0 !important;
-    text-align: center !important; 
-}
-
-/* Deixa o nav transparente e aumenta a espessura da faixa do menu */
-nav {
-    background-color: transparent !important;
-    padding: 20px 0 !important;
-}
-
-/* Aplica o texto branco para links do nav e para QUALQUER elemento do footer */
-nav a, footer, footer * {
-    color: #ffffff !important;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-/* --- TAMANHO DAS LETRAS --- */
-
-/* Tamanho dos links do menu */
-nav a {
-    font-size: 18px !important; 
-}
-
-/* Força o tamanho da letra para QUALQUER texto dentro do rodapé */
-footer, footer p, footer span, footer div, footer a {
-    font-size: 26px !important; /* Mudei para 20px para você notar bem a diferença */
-}
-
-/* Deixa a logo "Elektro Express" bem destacada no menu */
-nav a:first-child, .navbar-brand {
-    font-size: 28px !important;
-}
-
-/* CAIXAS DE CONTEÚDO */
-.caixa-cadastro, .caixa-lista,
-div[style*="background-color"],
-div[bgcolor],
-.card,
-div[style*="#e6f0fa"],
-div[style*="#e6f2ff"],
-.principal, .menu-navegacao {
-    width: 90% !important;
-    max-width: 1000px !important;
-    margin: 20px auto !important;
-    padding: 25px !important;
-    box-sizing: border-box !important;
-    
-    background-color: rgba(5, 15, 45, 0.92) !important;
-    border: 1px solid rgba(80, 160, 255, 0.4) !important;
-    border-radius: 8px !important;
-    color: #ffffff !important;
-
-    /* ⚠️ ESSENCIAL formulários */
-    position: relative !important;
-    pointer-events: auto !important;
-}
-
-/* elemento caixa branco */
-.caixa-cadastro *, .caixa-lista *,
-div[style*="background-color"] *,
-.card *, .principal * {
-    color: #ffffff !important;
-    pointer-events: auto !important;
-}
-
-
-/* TÍTULOS */
-h1, h2, h3 {
-    color: #e6f2ff !important;
-    font-weight: bold !important;
-    text-shadow: 0 0 8px rgba(100, 180, 255, 0.4);
-    margin-top: 0 !important;
-}
-
-
-/* CAMPOS DE FORMULÁRIO */
-input {
-    width: 100% !important;
-    box-sizing: border-box !important;
-    padding: 10px !important;
-    margin: 8px 0 !important;
-    background-color: rgba(255, 255, 255, 0.97) !important;
-    color: #000033 !important;
-    border: 1px solid #6699dd !important;
-    border-radius: 4px !important;
-    font-size: 15px !important;
-
-    /* ⚠️ ESSENCIAL: Permite digitar e enviar */
-    position: static !important;
-    z-index: auto !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-/* Deixa o placeholder com cor bonita */
-input::placeholder {
-    color: #5577aa !important;
-}
-
-
-/* TABELAS  */
-table {
-    width: 100% !important;
-    border-collapse: collapse !important;
-    margin-top: 15px !important;
-}
-
-th {
-    background-color: rgba(0, 80, 160, 0.8) !important;
-    color: #ffffff !important;
-    padding: 12px !important;
-    text-align: left !important;
-    font-weight: bold !important;
-}
-
-td {
-    padding: 12px !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
-    color: #ffffff !important;
-}
-
-
-/* BOTÕES  */
-button, .btn {
-    padding: 8px 18px !important;
-    border: none !important;
-    border-radius: 4px !important;
-    font-weight: bold !important;
-    cursor: pointer !important;
-    font-size: 14px !important;
-}
-
-.btn-cadastrar, button[type="submit"] { 
-    background-color: #28a745 !important; 
-    color: #fff !important; 
-}
-.btn-limpar, button[type="reset"] { 
-    background-color: #dc3545 !important; 
-    color: #fff !important; 
-}
-.btn-editar { background-color: #ffcc00 !important; color: #000 !important; }
-.btn-excluir { background-color: #e62e2e !important; color: #fff !important; }
-
-/* Seleciona todos os links que estão dentro do bloco card-body */
-.card-body a {
-    font-size: 2.0rem; /* Aumenta o tamanho da letra */
-    text-decoration: none; /* Remove o sublinhado se desejar */
-    display: inline-block; /* Melhora a área de clique do link */
-    padding: 5px 0; /* Dá um espaçamento vertical entre eles */
-}
-
-/* ===== FUNDO DA PÁGINA ===== */
 body {
     background-image: url('/imgs/fundo.png'); 
     background-size: cover;
@@ -269,28 +22,30 @@ body {
 }
 
 /* ==========================================
-   MENU E RODAPÉ
+   ===== MENU SUPERIOR (NAV) =====
    ========================================== */
-
-/* Deixa o nav transparente e com espaçamento elegante */
-/* ==========================================
-   MENU SUPERIOR (Faixa mais larga e visível)
-   ========================================== */
-
 nav {
-    /* 1. Define uma cor escura semi-transparente para a faixa aparecer */
-    background-color: rgba(5, 15, 45, 0.75) !important; 
-    
-    /* 2. Deixa a faixa bem mais alta/larga (Cima e Baixo: 35px | Laterais: 0) */
+    background-color: rgba(0, 51, 102, 0.9) !important;
     padding: 35px 0 !important; 
-    
-    /* 3. Garante que ela ocupe toda a largura da tela */
     width: 100% !important;
-    
-    /* Opcional: Adiciona uma linha sutil azul brilhante embaixo da faixa */
     border-bottom: 1px solid rgba(80, 160, 255, 0.3) !important;
 }
 
+nav a, .navbar-brand {
+    color: #ffffff !important;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 18px !important; 
+}
+
+/* Destaca a logo "Elektro Express" */
+nav a:first-child, .navbar-brand {
+    font-size: 28px !important;
+}
+
+/* ==========================================
+   ===== RODAPÉ (FOOTER) - LARGURA TOTAL =====
+   ========================================== */
 footer {
     background-color: rgba(0, 51, 102, 0.9) !important;
     color: #ffffff !important;
@@ -298,23 +53,18 @@ footer {
     text-align: center !important; 
     margin-top: auto !important; 
     margin-bottom: 0 !important;
+    
+    /* 🌟 FORÇA O AZUL A OCUPAR 100% DA TELA DE PONTA A PONTA */
     width: 100% !important;
+    max-width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
 }
 
-/* Remove margens extras da linha divisória */
-hr {
-    margin-bottom: 0 !important;
-}
-
-nav a, footer, footer * {
+footer, footer * {
     color: #ffffff !important;
     font-weight: bold;
     text-decoration: none;
-}
-
-/* --- TAMANHO DAS LETRAS --- */
-nav a {
-    font-size: 18px !important; 
 }
 
 .texto-rodape {
@@ -323,22 +73,28 @@ nav a {
     display: inline-block !important;
 }
 
-nav a:first-child, .navbar-brand {
-    font-size: 28px !important;
+hr {
+    margin-bottom: 0 !important;
 }
 
 /* ==========================================
-   ALINHAMENTO DO CONTEÚDO CENTRAL
+   ===== ALINHAMENTO DO CONTEÚDO CENTRAL =====
    ========================================== */
-
-/* Centraliza os textos de Boas-Vindas */
 body > h1, body > h2, body > p, body > h3, .container-fluid h1, .container-fluid p {
     text-align: center !important;
     margin-left: auto !important;
     margin-right: auto !important;
 }
 
-/* CAIXAS DE CONTEÚDO (Centraliza o card perfeitamente) */
+/* TÍTULOS */
+h1, h2, h3 {
+    color: #e6f2ff !important;
+    font-weight: bold !important;
+    text-shadow: 0 0 8px rgba(100, 180, 255, 0.4);
+    margin-top: 0 !important;
+}
+
+/* CAIXAS DE CONTEÚDO (CARDS) */
 .caixa-cadastro, .caixa-lista,
 div[style*="background-color"],
 div[bgcolor],
@@ -348,8 +104,6 @@ div[style*="#e6f2ff"],
 .principal, .menu-navegacao {
     width: 90% !important;
     max-width: 800px !important; 
-    
-    /* 🌟 O segredo: 'auto' nas laterais centraliza o bloco sem quebrar o resto da página */
     margin: 30px auto !important; 
     padding: 35px !important; 
     box-sizing: border-box !important;
@@ -363,17 +117,86 @@ div[style*="#e6f2ff"],
     pointer-events: auto !important;
 }
 
-/* --- TURBO NO TAMANHO DAS LETRAS DO CARD CENTRAL --- */
-.card h2, .principal h2, .menu-navegacao h2 {
-    font-size: 32px !important; 
-    margin-bottom: 20px !important;
+.caixa-cadastro *, .caixa-lista *,
+div[style*="background-color"] *,
+.card *, .principal * {
+    color: #ffffff !important;
+    pointer-events: auto !important;
 }
 
-.card ul li a, .menu-navegacao ul li a, .principal ul li a {
+/* ==========================================
+   ===== FORMULÁRIOS E BOTÕES (LETRAS GRANDES) =====
+   ========================================== */
+
+/* 1. Textos e rótulos do formulário e dados da tabela */
+div.card-body,
+div.card-body *,
+div.card-body form * {
     font-size: 22px !important; 
-    line-height: 40px !important; 
+    font-weight: bold !important;
 }
 
-.card ul li, .menu-navegacao ul li {
-    font-size: 22px !important;
+/* 2. Configuração e tamanho das caixas brancas de digitação (Inputs) */
+input {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 8px 0 !important;
+    background-color: rgba(255, 255, 255, 0.97) !important;
+    border: 1px solid #6699dd !important;
+    border-radius: 4px !important;
+    position: static !important;
+    z-index: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+div.card-body input {
+    font-size: 20px !important;  
+    padding: 14px !important;    
+    color: #000033 !important;   
+}
+
+div.card-body input::placeholder {
+    font-size: 18px !important;
+    color: #5577aa !important;
+}
+
+/* 3. Botões */
+button, .btn {
+    border: none !important;
+    border-radius: 4px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+}
+
+div.card-body button,
+div.card-body .btn {
+    font-size: 18px !important;
+    padding: 10px 22px !important; 
+}
+
+.btn-cadastrar, button[type="submit"] { background-color: #28a745 !important; color: #fff !important; }
+.btn-limpar, button[type="reset"] { background-color: #dc3545 !important; color: #fff !important; }
+.btn-editar { background-color: #ffcc00 !important; color: #000 !important; }
+.btn-excluir { background-color: #e62e2e !important; color: #fff !important; }
+
+/* 4. Tabelas */
+table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-top: 15px !important;
+}
+
+th {
+    background-color: rgba(0, 80, 160, 0.8) !important;
+    color: #ffffff !important;
+    padding: 12px !important;
+    text-align: left !important;
+    font-weight: bold !important;
+}
+
+td {
+    padding: 12px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
 }
