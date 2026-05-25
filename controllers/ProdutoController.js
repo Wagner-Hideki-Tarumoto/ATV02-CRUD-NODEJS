@@ -4,7 +4,7 @@ const router = express.Router();
 // IMPORTANDO O MODEL DE PRODUTO PARA SALVAR NO BANCO
 import Produto from "../models/Produto.js";
 
-// ROTA PRODUTOS
+// 1. ROTA DE LISTAGEM DE PRODUTOS (GET)
 router.get("/produtos", function(req, res) {
     
     // SUA LISTA DE DADOS COMPLETA COM AS IMAGENS PRESERVADAS
@@ -14,7 +14,7 @@ router.get("/produtos", function(req, res) {
        {nome: "Notebook Lenovo", preco: 3500, categoria: "Computadores", imagem: "notebook.png"},
        {nome: "Fone Bluetooth", preco: 66, categoria: "Periféricos", imagem: "fone.png"},
        {nome: "Mouse Gamer", preco: 150.00, categoria: "Periféricos", imagem: "mouse.png" },
-       {nome: "Teclado Mecânico", preco: 299.90, categoria: "Periféricos", imagem: "teclado.png" }, // CORRIGIDO: DE CATEGORY PARA CATEGORIA
+       {nome: "Teclado Mecânico", preco: 299.90, categoria: "Periféricos", imagem: "teclado.png" }, 
        {nome: "Monitor Gamer 24", preco: 899.00, categoria: "Eletrônicos", imagem: "monitor.png" }
     ];
 
@@ -38,6 +38,31 @@ router.get("/produtos", function(req, res) {
     .catch(error => {
         console.log(`OCORREU UM ERRO AO PROCESSAR OS PRODUTOS: ${error}`);
         res.redirect("/");
+    });
+});
+
+// 2. ROTA DE CADASTRO DE NOVO PRODUTO (POST) - ADICIONADA AQUI
+router.post("/produtos/new", (req, res) => {
+    const nome = req.body.nome;
+    const preco = req.body.preco;
+    const categoria = req.body.categoria;
+    
+    // CASO O USUÁRIO NÃO ENVIE IMAGEM, COLOCAMOS UMA PADRÃO PARA NÃO QUEBRAR O CARD
+    const imagem = req.body.imagem;
+
+    // INSERE O PRODUTO NO BANCO DE DADOS MYSQL
+    Produto.create({
+        nome: nome,
+        preco: preco,
+        categoria: categoria,
+        imagem: imagem
+    })
+    .then(() => {
+        res.redirect("/produtos"); // ATUALIZA A PÁGINA COM O NOVO PRODUTO NA LISTA
+    })
+    .catch(error => {
+        console.log(`ERRO AO CADASTRAR PRODUTO NO BANCO: ${error}`);
+        res.redirect("/produtos");
     });
 });
 

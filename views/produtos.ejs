@@ -39,7 +39,7 @@
         <div class="coluna-custom coluna-tabela">
             <div class="card">
                 <h2>Produtos Cadastrados</h2>
-                <div class="tabela-container-custom">
+                <div class="table-responsive tabela-container-custom">
                     <table class="tabela-produtos">
                         <thead>
                             <tr>
@@ -53,7 +53,9 @@
                             <% produtos.forEach(produto => { %>
                                 <tr>
                                     <td>
-                                        <img src="/imgs/<%= produto.imagem %>" class="imagem-produto" alt="Imagem">
+                                        <div class="wrapper-foto-tabela">
+                                            <img src="/imgs/<%= produto.imagem %>" class="imagem-produto" alt="Imagem">
+                                        </div>
                                     </td>
                                     <td class="nome-produto">
                                         <%= produto.nome %>
@@ -62,7 +64,7 @@
                                         R$ <%= produto.preco %>
                                     </td>
                                     <td class="categoria-produto">
-                                        <%= produto.categoria %>
+                                        <span class="badge-categoria-tabela"><%= produto.categoria %></span>
                                     </td>
                                 </tr>
                             <% }) %>
@@ -74,4 +76,5 @@
 
     </div>
 </div>
+
 <%- include('partials/footer.ejs') %>

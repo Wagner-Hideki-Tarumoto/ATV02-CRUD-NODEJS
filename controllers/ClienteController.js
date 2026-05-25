@@ -72,7 +72,7 @@ router.get("/clientes/editar/:id", (req, res) => {
     .then((cliente) => {
       if (cliente) {
         // RENDERIZA A VIEW 'CLIENTEEDIT' PASSANDO OS DADOS DO CLIENTE ENCONTRADO
-        res.render("clienteEdit", {
+        res.render("clienteEditar", {
           cliente: cliente, // PASSANDO OS DADOS DO CLIENTE PARA A PÁGINA
         });
       } else {

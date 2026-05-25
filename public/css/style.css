@@ -1,6 +1,4 @@
-/* =========================================================================
-   🌟 1. CONFIGURAÇÃO DO CORPO E BACKGROUND (REDE DIGITAL ESCURA LOCAL) 🌟
-   ========================================================================= */
+/* CONFIGURACAO DO CORPO E BACKGROUND */
 html {
     height: 100% !important;
     box-sizing: border-box !important;
@@ -13,11 +11,9 @@ body {
     background-repeat: no-repeat !important;
     background-attachment: fixed !important;
     background-color: #030a1c !important; 
-    
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
     margin: 0 !important;
     padding: 0 !important;
-    
     display: flex !important;
     flex-direction: column !important;
     min-height: 100vh !important;
@@ -27,9 +23,7 @@ body {
     flex: 1 0 auto !important;
 }
 
-/* =========================================================================
-   🌟 2. BARRA DE NAVEGAÇÃO SUPERIOR (MENU NAVBAR GIGANTE) 🌟
-   ========================================================================= */
+/* BARRA DE NAVEGACAO SUPERIOR */
 nav, .navbar {
     background-color: rgba(6, 18, 44, 0.95) !important;
     border-bottom: 3px solid rgba(0, 150, 255, 0.5) !important;
@@ -58,9 +52,7 @@ nav a:hover, .nav-link:hover {
     text-shadow: 0 0 10px rgba(255, 204, 0, 0.9) !important;
 }
 
-/* =========================================================================
-   🌟 3. BLOCOS CENTRAIS E TEXTOS INTERNOS DA HOME 🌟
-   ========================================================================= */
+/* BLOCOS CENTRAIS E ESTRUTURA GERAL */
 .container, div[class*="container"], .card, .jumbotron {
     max-width: 96% !important;
     width: 96% !important;
@@ -73,7 +65,7 @@ nav a:hover, .nav-link:hover {
     height: auto !important;
 }
 
-/* TÍTULOS GRANDES */
+/* TITULOS E LABELS DO FORMULARIO */
 h1, h2, h3, h4, h5, .text-light, label, .card-title, .jumbotron h1 {
     color: #ffffff !important;
     font-weight: 900 !important;
@@ -83,20 +75,20 @@ h1, h2, h3, h4, h5, .text-light, label, .card-title, .jumbotron h1 {
     font-size: 32px !important; 
 }
 
-/* 🔴 💥 QUEBRA DE REGRAS INLINE: CORREÇÃO DA CLASSE .fs-4 E .currentDate 💥 🔴 */
-/* Essa cadeia de seletores é forte o suficiente para quebrar o inline do HTML */
+/* ELEMENTOS DE TEXTO DA HOME */
 body .container p.fs-4,
 body .container p.currentDate,
-.container p,
-p,
-.lead {
-    font-size: 40px !important; /* Força o tamanho gigante permanentemente */
-    color: #ffffff !important; 
+.container p.texto-navegue,
+p.currentDate {
+    font-size: 35px !important; 
+    color: #ffffff !important;  
     font-weight: 700 !important; 
-    line-height: 2.7 !important;
+    line-height: 1.4 !important; 
+    display: block !important;
+    margin-bottom: 25px !important;
 }
 
-/* CAIXAS DE ENTRADA DE FORMULÁRIO (INPUT) */
+/* CAMPOS DE ENTRADA DO FORMULARIO */
 input[type="text"], input, select, textarea, .form-control {
     background-color: rgba(3, 10, 28, 0.8) !important;
     border: 2px solid rgba(0, 150, 255, 0.5) !important;
@@ -104,9 +96,21 @@ input[type="text"], input, select, textarea, .form-control {
     border-radius: 6px !important;
     padding: 14px 18px !important;
     font-size: 34px !important; 
+    line-height: 1.4 !important;
+    height: auto !important;     
+    box-sizing: border-box !important;
 }
 
-/* LISTA DE ATALHOS AZUIS */
+/* ESTILIZACAO DO PREENCHIMENTO AUTOMATICO DO NAVEGADOR */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff !important;
+    font-size: 34px !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* LISTAS E LINKS DE NAVEGACAO INTERNA */
 .container ul, ul, li {
     list-style: none !important;
     padding: 0 !important;
@@ -136,17 +140,15 @@ li a {
     text-shadow: 0 0 10px rgba(255, 204, 0, 0.8) !important;
 }
 
-/* BOTÃO CELESTE "VERIFICAR PEDIDOS" */
-.btn-info, .container .btn, .btn-lg {
+/* BOTOES GERAIS E ACOES PRINCIPAIS */
+.btn-info, .container .btn, .btn-lg, .btn-verificar, .container .lead .btn-verificar {
     font-size: 24px !important; 
     font-weight: bold !important;
     padding: 14px 35px !important;
     text-transform: uppercase !important;
 }
 
-/* =========================================================================
-   🌟 4. GRID EM COLUNAS PARA OS CARDS DE CLIENTES 🌟
-   ========================================================================= */
+/* CONFIGURACAO DA TABELA E EXECUCAO DOS CARDS EM COLUNAS */
 thead {
     display: none !important; 
 }
@@ -193,7 +195,7 @@ tbody tr td, .table tbody tr td {
     border: none !important;
     background: transparent !important;
     color: #ffffff !important;
-    font-size: 20px !important; 
+    font-size: 30px !important; 
 }
 
 tbody tr td img, table img {
@@ -205,9 +207,10 @@ tbody tr td img, table img {
     display: inline-block !important;
 }
 
-tbody tr td:nth-of-type(2)::before { content: "NOME:" !important; color: #ffcc00 !important; font-weight: bold !important; display: block !important; margin-bottom: 2px !important; font-size: 15px !important; }
-tbody tr td:nth-of-type(3)::before { content: "CPF:" !important; color: #ffcc00 !important; font-weight: bold !important; display: block !important; margin-bottom: 2px !important; font-size: 15px !important; }
-tbody tr td:nth-of-type(4)::before { content: "ENDEREÇO:" !important; color: #ffcc00 !important; font-weight: bold !important; display: block !important; margin-bottom: 2px !important; font-size: 15px !important; }
+/* ROTULOS DOS DADOS DINAMICOS DOS CARDS */
+tbody tr td:nth-of-type(2)::before { content: "NOME:" !important; color: #ffcc00 !important; font-weight: bold !important; display: block !important; margin-bottom: 2px !important; font-size: 25px !important; }
+tbody tr td:nth-of-type(3)::before { content: "CPF:" !important; color: #ffcc00 !important; font-weight: bold !important; display: block !important; margin-bottom: 2px !important; font-size: 25px !important; }
+tbody tr td:nth-of-type(4)::before { content: "ENDEREÇO:" !important; color: #ffcc00 !important; font-weight: bold !important; display: block !important; margin-bottom: 2px !important; font-size: 25px !important; }
 
 tbody tr td:nth-last-of-type(2) {
     margin-top: auto !important; 
@@ -223,6 +226,7 @@ tbody tr td:last-child {
     padding-top: 6px !important;
 }
 
+/* BOTOES INTERNOS DOS CARDS */
 tbody tr td a, tbody tr td button, tbody tr td .btn {
     padding: 12px 0 !important;
     width: 100% !important;
@@ -238,9 +242,14 @@ tbody tr td a, tbody tr td button, tbody tr td .btn {
 tbody tr td a[href*="edit"], tbody tr td .btn-warning { background-color: #ffcc00 !important; color: #000000 !important; }
 tbody tr td a[href*="delete"], tbody tr td .btn-danger { background-color: #e62e2e !important; color: #ffffff !important; }
 
-/* =========================================================================
-   🌟 5. RODAPÉ INSTITUCIONAL 🌟
-   ========================================================================= */
+/* ROTULOS DOS DADOS DINAMICOS DOS CARDS DE PEDIDOS */
+.table tbody tr td:nth-of-type(1)::before { content: "IMAGEM:" !important; color: #ffcc00 !important; font-weight: bold !important; display: block !important; margin-bottom: 2px !important; font-size: 25px !important; }
+.table tbody tr td:nth-of-type(2)::before { content: "NUMERO:" !important; color: #ffcc00 !important; font-weight: bold !important; display: block !important; margin-bottom: 2px !important; font-size: 25px !important; }
+.table tbody tr td:nth-of-type(3)::before { content: "VALOR TOTAL:" !important; color: #ffcc00 !important; font-weight: bold !important; display: block !important; margin-bottom: 2px !important; font-size: 25px !important; }
+.table tbody tr td:nth-of-type(4)::before { content: "CLIENTE:" !important; color: #ffcc00 !important; font-weight: bold !important; display: block !important; margin-bottom: 2px !important; font-size: 25px !important; }
+.table tbody tr td:nth-of-type(5)::before { content: "PRODUTOS COMPRADOS:" !important; color: #ffcc00 !important; font-weight: bold !important; display: block !important; margin-bottom: 2px !important; font-size: 25px !important; }
+
+/* RODAPE INSTITUCIONAL */
 footer, .footer {
     display: block !important;
     visibility: visible !important;
@@ -258,20 +267,158 @@ footer, .footer {
     font-size: 33px !important; 
 }
 
-/* Estilo para a frase da data (antigo style="font-size: 2.25rem...") */
-.container p.currentDate, 
-p.currentDate {
-    font-size: 2.25rem !important;
+/* ROTULOS DOS DADOS DINAMICOS DOS CARDS DE PEDIDOS */
+.table tbody tr td:nth-of-type(1)::before { content: "IMAGEM:" !important; color: #ffcc00 !important; font-weight: bold !important; display: block !important; margin-bottom: 2px !important; font-size: 25px !important; }
+.table tbody tr td:nth-of-type(2)::before { content: "NUMERO:" !important; color: #ffcc00 !important; font-weight: bold !important; display: block !important; margin-bottom: 2px !important; font-size: 25px !important; }
+.table tbody tr td:nth-of-type(3)::before { content: "VALOR TOTAL:" !important; color: #ffcc00 !important; font-weight: bold !important; display: block !important; margin-bottom: 2px !important; font-size: 25px !important; }
+.table tbody tr td:nth-of-type(4)::before { content: "CLIENTE:" !important; color: #ffcc00 !important; font-weight: bold !important; display: block !important; margin-bottom: 2px !important; font-size: 25px !important; }
+.table tbody tr td:nth-of-type(5)::before { content: "PRODUTOS COMPRADOS:" !important; color: #ffcc00 !important; font-weight: bold !important; display: block !important; margin-bottom: 2px !important; font-size: 25px !important; }
+
+/* AJUSTE DO BOTÃO CADASTRAR DA TELA DE PRODUTOS */
+.card-body form button[type="submit"] {
+    display: block !important;
+    width: 250px !important;          /* MANTÉM O TAMANHO CONTROLADO */
+    margin: 25px 0 0 0 !important;    /* ALTERADO: ALINHA 100% À ESQUERDA */
+    padding: 12px 0 !important;       
+    font-size: 16px !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    background-color: #28a745 !important; 
+    color: white !important;
+    border: none !important;
+    border-radius: 5px !important;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+/* EFEITO DE PASSAR O MOUSE POR CIMA */
+.card-body form button[type="submit"]:hover {
+    background-color: #218838 !important; 
+}
+    transition: background 0.2s ease;
+}
+
+/* EFEITO DE PASSAR O MOUSE POR CIMA */
+.card-body form button[type="submit"]:hover {
+    background-color: #218838 !important; /* VERDE UM POUCO MAIS ESCURO */
+}
+
+/* AJUSTE PARA OS CARDS NÃO VAZAREM DA TELA E QUEBRAREM LINHA */
+.card-body .d-flex, 
+.produtos-container, /* use o nome da classe que envelopa seus cards */
+div[style*="display: flex"] { 
+    display: flex !important;
+    flex-wrap: wrap !important;        /* FAZ OS CARDS IRRE PARA A LINHA DE BAIXO */
+    gap: 20px !important;              /* MANTÉM UM ESPAÇAMENTO IGUAL ENTRE ELES */
+    justify-content: flex-start !important; /* ALINHA OS CARDS COMEÇANDO PELA ESQUERDA */
+}
+
+/* CONTAINER DOS CARDS DE PRODUTOS */
+.produtos-wrapper {
+    display: flex !important;
+    flex-wrap: wrap !important;   /* ISSO IMPEDE O RE-MONTE E CRIA NOVAS LINHAS */
+    gap: 20px !important;         /* ESPAÇO ENTRE OS CARDS */
+    padding: 20px !important;
+    justify-content: flex-start !important;
+}
+
+/* CARD INDIVIDUAL DO PRODUTO */
+.produto-card-item {
+    flex: 0 1 220px !important;   /* Tamanho fixo ideal para cada card */
+    background-color: #0b1a30 !important; /* Azul escuro do seu tema */
+    border: 1px solid #17a2b8 !important; /* Bordinha azul brilhante */
+    border-radius: 12px !important;
+    padding: 15px !important;
+    text-align: center !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3) !important;
+}
+
+/* FOTO REDONDA CENTRALIZADA */
+.foto-circulo {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #ffc107; /* Bordinha amarela igual a sua */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.foto-circulo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* TEXTOS INTERNOS DOS CARDS */
+.label-amarelo {
+    color: #ffc107 !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
+    display: block;
+}
+
+.texto-branco {
+    color: #ffffff !important;
+    font-size: 14px !important;
+    margin-bottom: 8px !important;
+}
+
+.preco-destaque {
     color: #ffffff !important;
     font-weight: bold !important;
+    margin-bottom: 4px !important;
+}
+
+.categoria-badge {
+    color: #a0aec0 !important;
+    font-size: 12px !important;
+}
+
+/* Garante que a imagem preencha o círculo perfeitamente */
+.foto-circulo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Faz a imagem se adaptar ao formato redondo */
     display: block !important;
 }
 
-/* Estilo para o botão verificar (antigo style="font-size: 1.6rem...") */
-.container .lead .btn-verificar,
-.btn-verificar {
-    font-size: 1.6rem !important;
-    padding: 12px 28px !important;
+/* CONTAINER DA FOTO NA TABELA - TAMANHO AMPLIADO */
+.wrapper-foto-tabela {
+    width: 150px !important;  /* Aumentado de 60px para 100px */
+    height: 150px !important; /* Aumentado de 60px para 100px */
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #ffffff !important;
+    border: 3px solid #ffc107 !important; /* Aro amarelo um pouco mais grosso para destacar */
+    margin: 0 auto !important;
+}
+
+/* REDIMENSIONA A FOTO DO PRODUTO SEM DISTORCER */
+.imagem-produto {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* DEIXAR OS TEXTOS ALINHADOS E BONITOS NA TABELA */
+.tabela-produtos td {
+    vertical-align: middle !important;
+    color: #ffffff !important;
+}
+
+.badge-categoria-tabela {
+    background-color: #1a365d !important;
+    color: #a0aec0 !important;
+    padding: 4px 10px !important;
+    border-radius: 12px !important;
+    font-size: 12px !important;
     font-weight: bold !important;
-    text-transform: uppercase !important;
 }

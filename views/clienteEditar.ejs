@@ -1,37 +1,37 @@
-<%- include('partials/header.ejs')%>
-<%- include('partials/navbar.ejs')%>
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
 
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-4"> 
             <div class="card shadow card-form-custom">
                 <div class="card-header bg-transparent border-0 text-center pt-4">
-                    <h3 class="fw-bold card-title-custom">Alterar cliente</h3>
+                    <h3 class="fw-bold card-title-custom">ALTERAR CLIENTE</h3>
                     <hr class="card-hr-custom">
                 </div>
                 <div class="card-body px-4 pb-4">
                     <form action="/clientes/alterar" method="POST">
                         
                         <div class="form-group mb-3 text-start">
-                            <label class="form-label fw-bold small">Nome do Cliente</label>
+                            <label class="form-label fw-bold small">NOME DO CLIENTE</label>
                             <input type="text" name="nome" class="form-control" value="<%= cliente.nome %>" required>
                         </div>
                         
                         <div class="form-group mb-3 text-start">
-                            <label class="form-label fw-bold small">CPF do Cliente</label>
+                            <label class="form-label fw-bold small">CPF DO CLIENTE</label>
                             <input type="text" name="cpf" class="form-control" value="<%= cliente.cpf %>" required>
                         </div>
                         
                         <div class="form-group mb-4 text-start">
-                            <label class="form-label fw-bold small">Endereço do Cliente</label>
+                            <label class="form-label fw-bold small">ENDEREÇO DO CLIENTE</label>
                             <input type="text" name="endereco" class="form-control" value="<%= cliente.endereco %>" required>
                         </div>
 
                         <input type="hidden" name="id" value="<%= cliente.id %>">
 
                         <div class="d-flex justify-content-between gap-2">
-                            <button type="submit" class="btn btn-success w-50 fw-bold">Alterar</button>
-                            <button type="reset" class="btn btn-danger w-50 fw-bold">Limpar</button>
+                            <button type="submit" class="btn btn-success w-50 fw-bold">SALVAR</button>
+                            <a href="/clientes" class="btn btn-danger w-50 fw-bold text-center" style="line-height: 24px;">CANCELAR</a>
                         </div>
                     </form>
                 </div>
@@ -40,4 +40,4 @@
     </div>
 </div>
 
-<%- include('partials/footer.ejs')%>
+<%- include ('partials/footer.ejs') %>

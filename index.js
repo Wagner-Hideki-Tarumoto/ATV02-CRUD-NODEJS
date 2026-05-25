@@ -28,19 +28,17 @@ app.use("/", ClienteController);
 app.use("/", ProdutoController);
 app.use("/", PedidoController);
 
-// INVOCANDO AS ASSOCIAÇÕES DO BANCO
+// INVOCANDO AS ASSOCIAÇÕES DO BANCO (Apenas uma vez)
 associations();
 
-// SINCRONIZANDO O BANCO DE DADOS DE FORMA SEGURA
-Promise.all([
-    Cliente.sync({ force: false }),
-    Produto.sync({ force: false }),
-    Pedido.sync({ force: false })
-]).then(() => {
-    console.log("ENTIDADES CRIADAS E RELACIONADAS COM SUCESSO.");
-}).catch(error => {
-    console.log("Erro ao sincronizar os Models: " + error);
-});
+// RESETANDO O BANCO DE FORMA EXPULSIVA PARA CORRIGIR AS CHAVES E TABELAS INTERMEDIÁRIAS
+connection.sync({ alter: true })
+    .then(() => {
+        console.log("BANCO DE DADOS LIMPO, REFEITO E SINCRONIZADO DO ZERO COM SUCESSO.");
+    })
+    .catch(error => {
+        console.log("Erro ao sincronizar o Banco de Dados: " + error);
+    });
 
 // ROTA PRINCIPAL (HOME)
 app.get("/", (req, res) => {
