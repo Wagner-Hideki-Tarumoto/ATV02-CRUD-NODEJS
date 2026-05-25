@@ -32,9 +32,13 @@ app.use("/", PedidoController);
 associations();
 
 // RESETANDO O BANCO DE FORMA EXPULSIVA PARA CORRIGIR AS CHAVES E TABELAS INTERMEDIÁRIAS
-connection.sync({ alter: true })
+// COMENTE O SYNC ANTIGO PARA PARAR DE APAGAR:
+// connection.sync({ alter: true }) 
+
+// DEIXE APENAS ISSO PARA MANTER OS DADOS SALVOS:
+connection.sync()
     .then(() => {
-        console.log("BANCO DE DADOS LIMPO, REFEITO E SINCRONIZADO DO ZERO COM SUCESSO.");
+        console.log("CONEXÃO ESTÁVEL: OS DADOS NÃO SERÃO MAIS APAGADOS!");
     })
     .catch(error => {
         console.log("Erro ao sincronizar o Banco de Dados: " + error);
