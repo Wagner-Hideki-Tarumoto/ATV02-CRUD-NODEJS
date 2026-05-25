@@ -1,0 +1,60 @@
+<%- include('partials/header.ejs') %>
+<%- include('partials/navbar.ejs') %>
+
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header">
+            <h2>Alterar pedido</h2>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="/pedidos/update/<%= pedido.id %>">
+                
+                <input type="hidden" name="id" value="<%= pedido.id %>">
+
+                <div class="form-group mb-3">
+                    <label>Número do pedido:</label>
+                    <input type="number" class="form-control" name="numero" value="<%= pedido.numero %>" required>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label>Valor total (R$):</label>
+                    <input type="text" class="form-control" name="valor" value="<%= pedido.valor %>" required>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label>Cliente:</label>
+                    <select name="clienteId" class="form-control" required>
+                        <% clientes.forEach(cliente => { %>
+                            <option value="<%= cliente.id %>" <%= cliente.id === pedido.cliente_id ? 'selected' : '' %>>
+                                <%= cliente.nome %>
+                            </option>
+                        <% }) %>
+                    </select>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label>Produtos do Pedido (Segure Ctrl para selecionar mais de um):</label>
+                    <select name="produtos" class="form-control" multiple required>
+                        <% produtos.forEach(produto => { %>
+                            <% 
+                                let selecionado = '';
+                                if (pedido.produtos) {
+                                    pedido.produtos.forEach(p => {
+                                        if (p.id === produto.id) { selecionado = 'selected'; }
+                                    });
+                                }
+                            %>
+                            <option value="<%= produto.id %>" <%= selecionado %>>
+                                <%= produto.nome %> - R$ <%= produto.preco.toFixed(2) %>
+                            </option>
+                        <% }) %>
+                    </select>
+                </div>
+
+                <button class="btn btn-warning">Alterar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer.ejs') %>

@@ -1,202 +1,277 @@
-/* ==========================================
-   ===== FUNDO DA PÁGINA E ESTRUTURA =====
-   ========================================== */
+/* =========================================================================
+   🌟 1. CONFIGURAÇÃO DO CORPO E BACKGROUND (REDE DIGITAL ESCURA LOCAL) 🌟
+   ========================================================================= */
+html {
+    height: 100% !important;
+    box-sizing: border-box !important;
+}
+
 body {
-    background-image: url('/imgs/fundo.png'); 
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-color: #0a0a23;
-
-    font-family: Arial, sans-serif;
-    line-height: 30px;
-    overflow-x: hidden;
+    background-image: url('/imgs/fundo.png') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-color: #030a1c !important; 
     
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; 
-    margin: 0;
-    padding: 0;
-    color: #ffffff !important;
-}
-
-/* ==========================================
-   ===== MENU SUPERIOR (NAV) =====
-   ========================================== */
-nav {
-    background-color: rgba(0, 51, 102, 0.9) !important;
-    padding: 35px 0 !important; 
-    width: 100% !important;
-    border-bottom: 1px solid rgba(80, 160, 255, 0.3) !important;
-}
-
-nav a, .navbar-brand {
-    color: #ffffff !important;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 18px !important; 
-}
-
-/* Destaca a logo "Elektro Express" */
-nav a:first-child, .navbar-brand {
-    font-size: 28px !important;
-}
-
-/* ==========================================
-   ===== RODAPÉ (FOOTER) - LARGURA TOTAL =====
-   ========================================== */
-footer {
-    background-color: rgba(0, 51, 102, 0.9) !important;
-    color: #ffffff !important;
-    padding: 25px 0 !important;
-    text-align: center !important; 
-    margin-top: auto !important; 
-    margin-bottom: 0 !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    margin: 0 !important;
+    padding: 0 !important;
     
-    /* 🌟 FORÇA O AZUL A OCUPAR 100% DA TELA DE PONTA A PONTA */
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 100vh !important;
+}
+
+.main-content, main, body > div:not(.footer):not(footer) {
+    flex: 1 0 auto !important;
+}
+
+/* =========================================================================
+   🌟 2. BARRA DE NAVEGAÇÃO SUPERIOR (MENU NAVBAR GIGANTE) 🌟
+   ========================================================================= */
+nav, .navbar {
+    background-color: rgba(6, 18, 44, 0.95) !important;
+    border-bottom: 3px solid rgba(0, 150, 255, 0.5) !important;
+    box-shadow: 0 4px 20px rgba(0, 110, 255, 0.4) !important;
+    padding: 25px 40px !important; 
+    margin-bottom: 30px !important;
     width: 100% !important;
-    max-width: 100% !important;
-    left: 0 !important;
-    right: 0 !important;
+    display: flex !important;
+    align-items: center !important;
 }
 
-footer, footer * {
+nav a, .navbar-brand, .nav-link, .navbar-nav .nav-link {
     color: #ffffff !important;
-    font-weight: bold;
-    text-decoration: none;
+    font-weight: 900 !important; 
+    text-transform: uppercase !important;
+    letter-spacing: 2.0px !important; 
+    text-decoration: none !important;
+    display: inline-block !important;
+    transition: all 0.3s ease !important;
+    font-size: 35px !important; 
+    padding: 5px 20px !important;
 }
 
-.texto-rodape {
+nav a:hover, .nav-link:hover {
+    color: #ffcc00 !important;
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.9) !important;
+}
+
+/* =========================================================================
+   🌟 3. BLOCOS CENTRAIS E TEXTOS INTERNOS DA HOME 🌟
+   ========================================================================= */
+.container, div[class*="container"], .card, .jumbotron {
+    max-width: 96% !important;
+    width: 96% !important;
+    background-color: rgba(6, 18, 44, 0.85) !important; 
+    border: 3px solid rgba(0, 150, 255, 0.4) !important;
+    border-radius: 15px !important;
+    padding: 40px !important; 
+    margin: 0 auto 35px auto !important;
+    box-shadow: 0 0 25px rgba(0, 110, 255, 0.4) !important;
+    height: auto !important;
+}
+
+/* TÍTULOS GRANDES */
+h1, h2, h3, h4, h5, .text-light, label, .card-title, .jumbotron h1 {
+    color: #ffffff !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    margin-bottom: 25px !important;
+    font-size: 32px !important; 
+}
+
+/* 🔴 💥 QUEBRA DE REGRAS INLINE: CORREÇÃO DA CLASSE .fs-4 E .currentDate 💥 🔴 */
+/* Essa cadeia de seletores é forte o suficiente para quebrar o inline do HTML */
+body .container p.fs-4,
+body .container p.currentDate,
+.container p,
+p,
+.lead {
+    font-size: 40px !important; /* Força o tamanho gigante permanentemente */
+    color: #ffffff !important; 
+    font-weight: 700 !important; 
+    line-height: 2.7 !important;
+}
+
+/* CAIXAS DE ENTRADA DE FORMULÁRIO (INPUT) */
+input[type="text"], input, select, textarea, .form-control {
+    background-color: rgba(3, 10, 28, 0.8) !important;
+    border: 2px solid rgba(0, 150, 255, 0.5) !important;
+    color: #ffffff !important;
+    border-radius: 6px !important;
+    padding: 14px 18px !important;
+    font-size: 34px !important; 
+}
+
+/* LISTA DE ATALHOS AZUIS */
+.container ul, ul, li {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 20px 0 !important;
+}
+
+.container ul li, ul li, li {
+    margin-bottom: 32px !important; 
+}
+
+.container ul li a, 
+.container a:not(.btn), 
+ul li a, 
+li a {
+    color: #00d2ff !important;
+    text-decoration: none !important;
+    font-weight: 900 !important; 
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    transition: all 0.2s ease !important;
+    display: inline-block !important;
+    font-size: 32px !important; 
+}
+
+.container ul li a:hover, .container a:hover, ul li a:hover, li a:hover {
+    color: #ffcc00 !important;
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.8) !important;
+}
+
+/* BOTÃO CELESTE "VERIFICAR PEDIDOS" */
+.btn-info, .container .btn, .btn-lg {
     font-size: 24px !important; 
+    font-weight: bold !important;
+    padding: 14px 35px !important;
+    text-transform: uppercase !important;
+}
+
+/* =========================================================================
+   🌟 4. GRID EM COLUNAS PARA OS CARDS DE CLIENTES 🌟
+   ========================================================================= */
+thead {
+    display: none !important; 
+}
+
+table, .table {
+    display: block !important;
+    width: 100% !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+tbody, .table tbody {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; 
+    justify-content: space-between !important; 
+    gap: 12px !important; 
+    width: 100% !important;
+    background: transparent !important;
+    padding: 10px 0 !important;
+}
+
+tbody tr, .table tbody tr {
+    display: flex !important;
+    flex-direction: column !important; 
+    background-color: rgba(12, 30, 75, 0.95) !important;
+    padding: 25px 15px !important; 
+    border: 3px solid rgba(100, 180, 255, 0.6) !important;
+    border-radius: 20px !important;
+    box-sizing: border-box !important;
+    width: 16.5% !important; 
+    min-width: 15% !important;
+    flex-shrink: 0 !important;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4) !important;
+    height: auto !important;
+    min-height: 540px !important; 
+}
+
+tbody tr td, .table tbody tr td {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 8px 0 !important;
+    border: none !important;
+    background: transparent !important;
     color: #ffffff !important;
+    font-size: 20px !important; 
+}
+
+tbody tr td img, table img {
+    width: 95px !important;
+    height: 95px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    border: 3px solid #ffcc00 !important;
     display: inline-block !important;
 }
 
-hr {
-    margin-bottom: 0 !important;
+tbody tr td:nth-of-type(2)::before { content: "NOME:" !important; color: #ffcc00 !important; font-weight: bold !important; display: block !important; margin-bottom: 2px !important; font-size: 15px !important; }
+tbody tr td:nth-of-type(3)::before { content: "CPF:" !important; color: #ffcc00 !important; font-weight: bold !important; display: block !important; margin-bottom: 2px !important; font-size: 15px !important; }
+tbody tr td:nth-of-type(4)::before { content: "ENDEREÇO:" !important; color: #ffcc00 !important; font-weight: bold !important; display: block !important; margin-bottom: 2px !important; font-size: 15px !important; }
+
+tbody tr td:nth-last-of-type(2) {
+    margin-top: auto !important; 
+    padding-top: 15px !important;
 }
 
-/* ==========================================
-   ===== ALINHAMENTO DO CONTEÚDO CENTRAL =====
-   ========================================== */
-body > h1, body > h2, body > p, body > h3, .container-fluid h1, .container-fluid p {
+tbody tr td:nth-last-of-type(2)::before, tbody tr td:last-child::before, tbody tr td a::before {
+    content: "" !important;
+    display: none !important;
+}
+
+tbody tr td:last-child {
+    padding-top: 6px !important;
+}
+
+tbody tr td a, tbody tr td button, tbody tr td .btn {
+    padding: 12px 0 !important;
+    width: 100% !important;
+    display: block !important;
     text-align: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-
-/* TÍTULOS */
-h1, h2, h3 {
-    color: #e6f2ff !important;
-    font-weight: bold !important;
-    text-shadow: 0 0 8px rgba(100, 180, 255, 0.4);
-    margin-top: 0 !important;
-}
-
-/* CAIXAS DE CONTEÚDO (CARDS) */
-.caixa-cadastro, .caixa-lista,
-div[style*="background-color"],
-div[bgcolor],
-.card,
-div[style*="#e6f0fa"],
-div[style*="#e6f2ff"],
-.principal, .menu-navegacao {
-    width: 90% !important;
-    max-width: 800px !important; 
-    margin: 30px auto !important; 
-    padding: 35px !important; 
-    box-sizing: border-box !important;
-    
-    background-color: rgba(5, 15, 45, 0.92) !important;
-    border: 1px solid rgba(80, 160, 255, 0.4) !important;
     border-radius: 8px !important;
-    color: #ffffff !important;
-
-    position: relative !important;
-    pointer-events: auto !important;
-}
-
-.caixa-cadastro *, .caixa-lista *,
-div[style*="background-color"] *,
-.card *, .principal * {
-    color: #ffffff !important;
-    pointer-events: auto !important;
-}
-
-/* ==========================================
-   ===== FORMULÁRIOS E BOTÕES (LETRAS GRANDES) =====
-   ========================================== */
-
-/* 1. Textos e rótulos do formulário e dados da tabela */
-div.card-body,
-div.card-body *,
-div.card-body form * {
-    font-size: 22px !important; 
     font-weight: bold !important;
+    text-decoration: none !important;
+    text-transform: none !important;
+    font-size: 18px !important; 
 }
 
-/* 2. Configuração e tamanho das caixas brancas de digitação (Inputs) */
-input {
-    width: 100% !important;
-    box-sizing: border-box !important;
-    margin: 8px 0 !important;
-    background-color: rgba(255, 255, 255, 0.97) !important;
-    border: 1px solid #6699dd !important;
-    border-radius: 4px !important;
-    position: static !important;
-    z-index: auto !important;
-    opacity: 1 !important;
+tbody tr td a[href*="edit"], tbody tr td .btn-warning { background-color: #ffcc00 !important; color: #000000 !important; }
+tbody tr td a[href*="delete"], tbody tr td .btn-danger { background-color: #e62e2e !important; color: #ffffff !important; }
+
+/* =========================================================================
+   🌟 5. RODAPÉ INSTITUCIONAL 🌟
+   ========================================================================= */
+footer, .footer {
+    display: block !important;
     visibility: visible !important;
-}
-
-div.card-body input {
-    font-size: 20px !important;  
-    padding: 14px !important;    
-    color: #000033 !important;   
-}
-
-div.card-body input::placeholder {
-    font-size: 18px !important;
-    color: #5577aa !important;
-}
-
-/* 3. Botões */
-button, .btn {
-    border: none !important;
-    border-radius: 4px !important;
-    font-weight: bold !important;
-    cursor: pointer !important;
-}
-
-div.card-body button,
-div.card-body .btn {
-    font-size: 18px !important;
-    padding: 10px 22px !important; 
-}
-
-.btn-cadastrar, button[type="submit"] { background-color: #28a745 !important; color: #fff !important; }
-.btn-limpar, button[type="reset"] { background-color: #dc3545 !important; color: #fff !important; }
-.btn-editar { background-color: #ffcc00 !important; color: #000 !important; }
-.btn-excluir { background-color: #e62e2e !important; color: #fff !important; }
-
-/* 4. Tabelas */
-table {
+    background-color: rgba(6, 18, 44, 0.95) !important;
+    border-top: 3px solid rgba(0, 150, 255, 0.5) !important;
+    box-shadow: 0 -4px 20px rgba(0, 110, 255, 0.4) !important;
+    color: #ffffff !important;
+    text-align: center !important;
     width: 100% !important;
-    border-collapse: collapse !important;
-    margin-top: 15px !important;
-}
-
-th {
-    background-color: rgba(0, 80, 160, 0.8) !important;
-    color: #ffffff !important;
-    padding: 12px !important;
-    text-align: left !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    margin-top: auto !important; 
+    padding: 25px 0 !important; 
     font-weight: bold !important;
+    font-size: 33px !important; 
 }
 
-td {
-    padding: 12px !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+/* Estilo para a frase da data (antigo style="font-size: 2.25rem...") */
+.container p.currentDate, 
+p.currentDate {
+    font-size: 2.25rem !important;
     color: #ffffff !important;
+    font-weight: bold !important;
+    display: block !important;
+}
+
+/* Estilo para o botão verificar (antigo style="font-size: 1.6rem...") */
+.container .lead .btn-verificar,
+.btn-verificar {
+    font-size: 1.6rem !important;
+    padding: 12px 28px !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
 }

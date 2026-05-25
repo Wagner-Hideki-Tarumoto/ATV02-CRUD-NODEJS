@@ -1,34 +1,77 @@
-<%- include ('partials/header.ejs') %>
-<%- include ('partials/navbar.ejs') %>
+<%- include('partials/header.ejs') %>
+<%- include('partials/navbar.ejs') %>
 
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <h1>Produtos</h1>
-            </div>
-            <div class="card-body">
-                <table>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Nome:</th>
-                            <th>Preço:</th>
-                            <th>Categoria:</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% produtos.forEach(produto => { %>
-                        <tr>
-                            <td><img src="/imgs/<%= produto.imagem %>" width="40px"></td>
-                            <td><%= produto.nome %></td>
-                            <td><%= produto.preco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %></td>
-                            <td><%= produto.categoria %></td>
-                        </tr>
-                        <% }) %>
-                    </tbody>
-                </table>
+<div class="container-fluid container-principal">
+    <div class="row-expandida">
+        
+        <div class="coluna-custom coluna-cadastro">
+            <div class="card">
+                <h2>Cadastrar Produto</h2>
+                <div class="card-body">
+                    <form method="POST" action="/produtos/new" class="formulario-vertical">
+                        
+                        <div class="grupo-campo">
+                            <label>Nome do produto:</label>
+                            <input type="text" name="nome" placeholder="Insira o nome do produto" class="form-control" required>
+                        </div>
+
+                        <div class="grupo-campo">
+                            <label>Preço do produto (R$):</label>
+                            <input type="text" name="preco" placeholder="Insira o preço do produto" class="form-control" required>
+                        </div>
+
+                        <div class="grupo-campo">
+                            <label>Categoria do produto:</label>
+                            <input type="text" name="categoria" placeholder="Insira a categoria (Ex: Eletrônicos)" class="form-control" required>
+                        </div>
+
+                        <div class="grupo-campo">
+                            <label>Nome do arquivo de imagem:</label>
+                            <input type="text" name="imagem" placeholder="Insira o nome da imagem (Ex: mouse.png)" class="form-control" required>
+                        </div>
+
+                        <button type="submit" class="btn-cadastrar">Cadastrar</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
-<%- include ('partials/footer.ejs') %>
+        <div class="coluna-custom coluna-tabela">
+            <div class="card">
+                <h2>Produtos Cadastrados</h2>
+                <div class="tabela-container-custom">
+                    <table class="tabela-produtos">
+                        <thead>
+                            <tr>
+                                <th>Imagem</th>
+                                <th>Nome</th>
+                                <th>Preço</th>
+                                <th>Categoria</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% produtos.forEach(produto => { %>
+                                <tr>
+                                    <td>
+                                        <img src="/imgs/<%= produto.imagem %>" class="imagem-produto" alt="Imagem">
+                                    </td>
+                                    <td class="nome-produto">
+                                        <%= produto.nome %>
+                                    </td>
+                                    <td class="preco-produto">
+                                        R$ <%= produto.preco %>
+                                    </td>
+                                    <td class="categoria-produto">
+                                        <%= produto.categoria %>
+                                    </td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<%- include('partials/footer.ejs') %>

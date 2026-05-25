@@ -1,39 +1,43 @@
 <%- include('partials/header.ejs')%>
 <%- include('partials/navbar.ejs')%>
 
-<!--Pagina de Edição-->
-<div class="conteiner">
-<div class="card">
-    <div class="card-header">
-        <h1>Alterar cliente</h1>
-        <hr>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4"> 
+            <div class="card shadow card-form-custom">
+                <div class="card-header bg-transparent border-0 text-center pt-4">
+                    <h3 class="fw-bold card-title-custom">Alterar cliente</h3>
+                    <hr class="card-hr-custom">
+                </div>
+                <div class="card-body px-4 pb-4">
+                    <form action="/clientes/alterar" method="POST">
+                        
+                        <div class="form-group mb-3 text-start">
+                            <label class="form-label fw-bold small">Nome do Cliente</label>
+                            <input type="text" name="nome" class="form-control" value="<%= cliente.nome %>" required>
+                        </div>
+                        
+                        <div class="form-group mb-3 text-start">
+                            <label class="form-label fw-bold small">CPF do Cliente</label>
+                            <input type="text" name="cpf" class="form-control" value="<%= cliente.cpf %>" required>
+                        </div>
+                        
+                        <div class="form-group mb-4 text-start">
+                            <label class="form-label fw-bold small">Endereço do Cliente</label>
+                            <input type="text" name="endereco" class="form-control" value="<%= cliente.endereco %>" required>
+                        </div>
+
+                        <input type="hidden" name="id" value="<%= cliente.id %>">
+
+                        <div class="d-flex justify-content-between gap-2">
+                            <button type="submit" class="btn btn-success w-50 fw-bold">Alterar</button>
+                            <button type="reset" class="btn btn-danger w-50 fw-bold">Limpar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-<div class.card-body>
-<form action="/clientes/alterar" method="POST">
-    <label>Nome do cliente:</label>
-    <input type="text" name="nome" class="form-control" value="<%= cliente.nome %>" required>
-    <label>CPF do cliente:</label>
-    <input type="text" name="cpf" class="form-control" value="<%= cliente.cpf %>" required>
-    label>Endereco do cliente:</label>
-    <input type="text" name="endereco" class="form-control" value="<%= cliente.endereco %>" required>
-    <br>
-
-    //input armazenar id do cliente
-<input type="hidden" name="id" value="<%= cliente.id %">
-
-     <!--botao de enviar-->
-     <input type="submit" value="Alterar" class="btn btn-warning">
-      <!--botao de limpar--> 
-     <input type="reset" value="Limpar" class="btn btn-danger">
-    </cliente>
-   
-</form>
-
 </div>
 
-
-<div class="card">
-    <div class="card-header">
-
-</div>
 <%- include('partials/footer.ejs')%>
